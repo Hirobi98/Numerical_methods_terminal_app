@@ -1,0 +1,14 @@
+Polynomial degree 4
+Coefficients: 1 0 -5 0 4 
+Intervals detected: 4
+Root ≈ -2.000000  in 2 iterations
+Root ≈ -1.000000  in 2 iterations
+Root ≈ 1.000000  in 2 iterations
+Root ≈ 2.000000  in 2 iterations
+-----------------------------------
+Polynomial degree 4
+Coefficients: 1.000000 -3.000000 2.000000 6.000000 0.000000 
+Intervals detected: 2
+Root ≈ -1.000000  in 2 iterations
+Root ≈ -0.000000  in 2 iterations
+-----------------------------------
