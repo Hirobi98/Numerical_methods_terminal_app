@@ -1,0 +1,9 @@
+Function: 3x - cos(x) - 1 = 0
+Tolerance: 0.0001000000
+Search Step: 3.0000000000
+Initial Guesses : {-2.0000000000} 
+Root 1:
+  Search Interval = [-2.0000000000,1.0000000000]
+  Root Value= 0.6071016192
+  Iteration needed for the root 1 = 4
+Total roots attempted: 1
