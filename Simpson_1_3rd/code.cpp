@@ -9,7 +9,7 @@ auto f = [](double x) {
 
 };
 
-double simpsons13(double a, double b, int n, std::function<double(double)> func) {
+double simpsons13(double a, double b, int n, function<double(double)> func) {
     if (n % 2 != 0) {
 
         return NAN;
@@ -40,16 +40,16 @@ int main() {
     int n = 0;
 
     if (!fin.is_open()) {
-        cerr << "Error: Could not open input.txt" << std::endl;
+        cerr << "Error: Could not open input.txt" << endl;
         return 1;
     }
     if (!fout.is_open()) {
-        cerr << "Error: Could not open output.txt" << std::endl;
+        cerr << "Error: Could not open output.txt" << endl;
         return 1;
     }
 
     if (!(fin >> a >> b >> n)) {
-        fout << "ERROR: Failed to read input data." << std::endl;
+        fout << "ERROR: Failed to read input data." << endl;
         fin.close();
         fout.close();
         return 1;
@@ -64,7 +64,7 @@ int main() {
         fout << "ERROR: Number of sub-intervals (n) must be even for Simpson's 1/3 Rule." << std::endl;
     } else {
 
-        fout << result << std::endl;
+        fout << result << endl;
     }
 
     fin.close();
