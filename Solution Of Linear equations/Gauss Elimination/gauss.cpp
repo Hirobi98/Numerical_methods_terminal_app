@@ -1,0 +1,81 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
+    int n;
+    fin >> n;
+    vector<vector<double>> a(n, vector<double>(n + 1));
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n + 1; j++)
+            fin >> a[i][j];
+
+    for (int i = 0; i < n; i++) {
+        if (fabs(a[i][i]) < 1e-6) {
+            bool swapped = false;
+            for (int j = i + 1; j < n; j++) {
+                if (fabs(a[j][i]) > 1e-6) {
+                    swap(a[i], a[j]);
+                    swapped = true;
+                    break;
+                }
+            }
+            if (!swapped) {
+                fout << "Matrix is singular" << endl;
+                return 0;
+            }
+        }
+
+        for (int j = i + 1; j < n; j++) {
+            double f = a[j][i] / a[i][i];
+            for (int k = i; k < n + 1; k++)
+                a[j][k] -= a[i][k] * f;
+        }
+    }
+
+    fout << "Upper Triangular Matrix:" << endl;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n + 1; j++) {
+            if (fabs(a[i][j]) < 1e-6)
+                fout << "0 ";
+            else
+                fout << fixed << setprecision(3) << a[i][j] << " ";
+        }
+        fout << endl;
+    }
+
+    bool allzero;
+    for (int i = 0; i < n; i++) {
+        allzero = true;
+        for (int j = 0; j < n; j++) {
+            if (fabs(a[i][j]) > 1e-6) {
+                allzero = false;
+                break;
+            }
+        }
+        if (allzero && fabs(a[i][n]) > 1e-6) {
+            fout << "No solution" << endl;
+            return 0;
+        } else if (allzero && fabs(a[i][n]) < 1e-6) {
+            fout << "Infinite solution" << endl;
+            return 0;
+        }
+    }
+
+    vector<double> x(n);
+    for (int i = n - 1; i >= 0; i--) {
+        double sum = a[i][n];
+        for (int j = i + 1; j < n; j++)
+            sum -= a[i][j] * x[j];
+        x[i] = sum / a[i][i];
+    }
+
+    for (int i = 0; i < n; i++)
+        fout << "x" << i + 1 << " = " << fixed << setprecision(6) << x[i] << endl;
+
+    fin.close();
+    fout.close();
+    return 0;
+}
