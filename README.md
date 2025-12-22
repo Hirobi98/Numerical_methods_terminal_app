@@ -2826,9 +2826,46 @@ a2 = 1.000000
 #### Runge Kutta Theory
 [Add your theory content here]
 ##### Runge Kutta introduction
+The Runge–Kutta method is a numerical technique used to solve
+first-order ordinary differential equations of the form:
+```
+    dy/dx = f(x, y),  y(x0) = y0
+```
+It improves upon Euler’s method by using a weighted average
+of slopes calculated at different points within each step.
+The fourth-order Runge–Kutta method (RK4) is widely used
+due to its high accuracy and stability.
 ##### Runge Kutta formula
+```
+Let the step size be h and the current point be (xn, yn).
+
+k1 = h * f(xn, yn)
+k2 = h * f(xn + h/2, yn + k1/2)
+k3 = h * f(xn + h/2, yn + k2/2)
+k4 = h * f(xn + h, yn + k3)
+
+The next value of y is computed as:
+
+yn+1 = yn + (1/6)(k1 + 2k2 + 2k3 + k4)
+```
 ##### Runge Kutta steps
+1. Define the differential equation dy/dx = f(x, y).
+2. Initialize x0, y0, and step size h.
+3. Compute k1 using the current values of x and y.
+4. Compute k2 using midpoint values.
+5. Compute k3 using updated midpoint values.
+6. Compute k4 using endpoint values.
+7. Calculate yn+1 using the Runge–Kutta formula.
+8. Increase x by h and repeat until the required point is reached.
+
 ##### Runge Kutta application
+The Runge–Kutta method is used in:
+- Solving engineering and physics differential equations
+- Population growth and biological models
+- Electrical circuit analysis
+- Heat transfer and fluid flow problems
+- Projectile motion and orbital mechanics
+- Situations where analytical solutions are difficult or unavailable
 
 #### Runge Kutta Code
 ```cpp
