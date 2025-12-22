@@ -73,7 +73,7 @@
       - [Intro](#newton-raphson-introduction)
       - [Formula](#newton-raphson-formula)
       - [Algorithm](#newton-raphson-algorithm-steps)
-      - [Application](#newton-raphson-application)
+      - [Application](#newton-raphson-applications)
     - [Code](#newton-raphson-code)
     - [Input](#newton-raphson-input)
     - [Output](#newton-raphson-output)
@@ -337,12 +337,41 @@ int main() {
 
 #### Gauss Elimination Input
 ```
-[Add your input format here]
+3
+2 1 -1 8
+-3 -1 2 -11
+-2 1 2 -3
+```
+#### Input Format:
+```
+## Input Description
+
+3  → Number of variables (order of the system)
+
+2 1 -1 8  
+→ Coefficients of the first equation and its constant term  
+→ (2x₁ + x₂ − x₃ = 8)
+
+-3 -1 2 -11  
+→ Coefficients of the second equation and its constant term  
+→ (−3x₁ − x₂ + 2x₃ = −11)
+
+-2 1 2 -3  
+→ Coefficients of the third equation and its constant term  
+→ (−2x₁ + x₂ + 2x₃ = −3)
+
 ```
 
 #### Gauss Elimination Output
 ```
-[Add your output format here]
+Upper Triangular Matrix:
+2.000 1.000 -1.000 8.000 
+0 0.500 0.500 1.000 
+0 0 -1.000 1.000 
+x1 = 2.000000
+x2 = 3.000000
+x3 = -1.000000
+
 ```
 #### [Back to Contents](#table-of-contents)
 ---
@@ -535,12 +564,55 @@ int main() {
 
 #### Gauss Jordan Input
 ```
-[Add your input format here]
+3
+2 1 -3
+1 3 2 
+3 -2 4 
+9 5 1
+```
+#### Input Format;
+```
+3  
+→ Number of equations / variables (`n`)
+
+2 1 -3  
+→ Coefficients of the first equation  
+→ (2x₁ + x₂ − 3x₃)
+
+1 3 2  
+→ Coefficients of the second equation  
+→ (x₁ + 3x₂ + 2x₃)
+
+3 -2 4  
+→ Coefficients of the third equation  
+→ (3x₁ − 2x₂ + 4x₃)
+
+9 5 1  
+→ Constants of the equations  
+→ Right-hand side vector **b**
+
+Corresponding System of Equations:
+
+2x₁ + x₂ − 3x₃ = 9  
+x₁ + 3x₂ + 2x₃ = 5  
+3x₁ − 2x₂ + 4x₃ = 1  
+
+This input represents a system of **three linear equations with three unknowns**, solved using the **Gauss–Jordan Elimination method** to obtain the **Reduced Row Echelon Form (RREF)** and the **unique solution**.
+
 ```
 
 #### Gauss Jordan Output
 ```
-[Add your output format here]
+Reduced Row Echelon Form of the Augmented Matrix:
+     1.000      0.000      0.000  |      2.463
+     0.000      1.000      0.000  |      1.433
+    -0.000     -0.000      1.000  |     -0.881
+
+Solution for each variable rounded to 3 decimal places:
+x[1] = 2.463
+x[2] = 1.433
+x[3] = -0.881
+
 ```
 #### [Back to Contents](#table-of-contents)
 ---
@@ -787,12 +859,56 @@ int main() {
 
 #### LU Decomposition Input
 ```
-[Add your input format here]
+2
+1 1 2
+2 2 4
+2
+1 1 2
+2 2 5
+3
+2 3 -1 5
+4 1 2 6
+-2 5 3 12
 ```
+#### Input Format:
+```
+n
+a11 a12 ... a1n b1
+a21 a22 ... a2n b2
+...
+an1 an2 ... ann bn
+(repeated for multiple test cases)
+```
+**Where:**
+- `n` is the number of variables / equations  
+- Each of the next `n` lines represents one linear equation  
+- `aij` are the coefficients of the variables  
+- `bi` is the constant term  
+- The input represents an **augmented matrix of size n × (n+1)**  
+- Multiple systems can be provided sequentially in the same input file
+
 
 #### LU Decomposition Output
 ```
-[Add your output format here]
+The system has infinite solutions.
+
+The system has no solution.
+
+Lower Matrix L:
+     1.000      0.000      0.000 
+     0.500      1.000      0.000 
+    -0.500      0.778      1.000 
+Upper Matrix U:
+     4.000      1.000      2.000 
+     0.000      4.500      2.000 
+     0.000      0.000     -1.556 
+Solution:
+x1 = 1.250
+x2 = 2.286
+x3 = -0.643
+The system has a unique solution.
+
+
 ```
 #### [Back to Contents](#table-of-contents)
 ---
@@ -1032,12 +1148,43 @@ int main() {
 
 #### Matrix Inversion Input
 ```
-[Add your input format here]
+3
+2 1 1
+1 3 2
+1 2 2
+4 7 5
+```
+#### Input Format:
+```
+n
+a11 a12 a13 ... a1n
+a21 a22 a23 ... a2n
+...
+an1 an2 an3 ... ann
+b1 b2 b3 ... bn
 ```
 
 #### Matrix Inversion Output
 ```
-[Add your output format here]
+Here N = 3
+
+Determinant of A: 3.0000
+Inverse exists.
+
+ TRANSPOSE MATRIX
+    2.000000     1.000000     1.000000 
+    1.000000     3.000000     2.000000 
+    1.000000     2.000000     2.000000 
+
+FINAL INVERSE MATRIX
+    0.666667    -0.000000    -0.333333 
+   -0.000000     1.000000    -1.000000 
+   -0.333333    -1.000000     1.666667 
+The solution for Ax=b is :
+x[1] = 1.0000
+x[2] = 2.0000
+x[3] = 0.0000
+
 ```
 #### [Back to Contents](#table-of-contents)
 ---
@@ -1246,12 +1393,36 @@ int main()
 
 #### Bisection Input
 ```
-[Add your input format here]
+3
+-6 11 -6 1
+0 4
+0.5
+0.001
 ```
+#### Input Format:
+- `degree` → The degree of the polynomial.  
+  Example: `3` means a cubic polynomial.
+- `c0 c1 ... c_degree` → Coefficients of the polynomial starting from the constant term up to the highest degree term.  
+  Example: `-6 11 -6 1` represents the polynomial:  
+  `-6 + 11x − 6x² + 1x³ = 0`
+- `intervalStart intervalEnd` → The search interval for roots.  
+  Example: `0 4` means roots will be searched between `x = 0` and `x = 4`.
+- `stepSize` → The increment used to scan the interval for sign changes.  
+  Example: `0.5` means the interval is checked in steps of 0.5.
+- `tolerance` → The stopping criterion for the bisection iterations (accuracy of the root).  
+  Example: `0.001` means the algorithm stops when the interval size is less than 0.001.
+
 
 #### Bisection Output
 ```
-[Add your output format here]
+Equation is: x^3 - 6x^2 + 11x - 6 = 0
+Intervals containing roots: {1,1}  {2,2}  {2.5,3}  {3,3}  
+Roots are:
+Root 1 = 1.00
+Root 2 = 2.00
+Root 3 = 3.00
+Root 4 = 3.00
+
 ```
 #### [Back to Contents](#table-of-contents)
 ---
@@ -1362,8 +1533,19 @@ int main() {
 
 #### False Position Input
 ```
-[Add your input format here]
+1 2
+0.0001
+100
+
 ```
+#### Input Format;
+- `a b` → The initial interval endpoints.  
+  Example: `1 2` means the algorithm will search for a root between `x = 1` and `x = 2`.
+- `tolerance` → The acceptable error threshold for stopping the iteration.  
+  Example: `0.0001` means the algorithm stops when `|f(c)| < 0.0001`.
+- `maxIterations` → The maximum number of iterations allowed.  
+  Example: `100` means the algorithm will perform at most 100 iterations if convergence is not reached earlier.
+
 
 #### False Position Output
 ```
@@ -1514,12 +1696,42 @@ int main() {
 
 #### Secant Input
 ```
-[Add your input format here]
+4
+1 0 -5 0 4
+4 
+1 -3 2 6 0
+```
+#### Input Format;
+```
+- `degree` → The degree of the polynomial.  
+  Example: `4` means a quartic polynomial.
+- `c0 c1 ... c_degree` → Coefficients of the polynomial starting from the highest degree term down to the constant term.  
+  - `1 0 -5 0 4` represents:  
+    `x⁴ − 5x² + 4 = 0`
+  - `1 -3 2 6 0` represents:  
+    `x⁴ − 3x³ + 2x² + 6x = 0`
+- Multiple polynomials can be provided one after another in the same `input.txt`.  
+  The program processes each polynomial separately, detects intervals with sign changes, and applies the **Secant Method** to approximate roots.
+
 ```
 
 #### Secant Output
 ```
-[Add your output format here]
+Polynomial degree 4
+Coefficients: 1 0 -5 0 4 
+Intervals detected: 4
+Root ≈ -2.000000  in 2 iterations
+Root ≈ -1.000000  in 2 iterations
+Root ≈ 1.000000  in 2 iterations
+Root ≈ 2.000000  in 2 iterations
+-----------------------------------
+Polynomial degree 4
+Coefficients: 1.000000 -3.000000 2.000000 6.000000 0.000000 
+Intervals detected: 2
+Root ≈ -1.000000  in 2 iterations
+Root ≈ -0.000000  in 2 iterations
+-----------------------------------
+
 ```
 #### [Back to Contents](#table-of-contents)
 ---
@@ -1712,11 +1924,35 @@ int main(){
 
 #### Newton Raphson Input
 ```
-[Add your input format here]
+3 -2 5 -4 1 0.8 2.5
+
+```
+#### Input Format;
+```
+- `degree` → The degree of the polynomial.  
+  Example: `3` means a cubic polynomial.
+- `c0 c1 ... c_degree` → Coefficients of the polynomial starting from the highest degree term down to the constant term.  
+  Example: `-2 5 -4 1` represents the polynomial:  
+  `-2x³ + 5x² − 4x + 1 = 0`
+- `stepSize` → The search step used to scan for sign changes in the interval.  
+  Example: `0.8` means the program checks in increments of 0.8.
+- `initialGuess` → A fallback starting point for Newton–Raphson if no sign-change interval is found.  
+  Example: `2.5` means the algorithm will start iterations at `x = 2.5` if needed.
+
 ```
 
 #### Newton Raphson Output
 ```
+Function: 3x - cos(x) - 1 = 0
+Tolerance: 0.0001000000
+Search Step: 3.0000000000
+Initial Guesses : {-2.0000000000} 
+Root 1:
+  Search Interval = [-2.0000000000,1.0000000000]
+  Root Value= 0.6071016192
+  Iteration needed for the root 1 = 4
+Total roots attempted: 1
+
 ```
 #### [Back to Contents](#table-of-contents)
 ---
