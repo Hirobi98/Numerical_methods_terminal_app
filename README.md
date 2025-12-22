@@ -2103,7 +2103,8 @@ int main() {
 5.648438
 ```
 
-
+#### [Back to Contents](#table-of-contents)
+---
 
 
 ### Newton's Backward Interpolation Method
@@ -2234,7 +2235,8 @@ int main() {
 
 ```
 
-
+#### [Back to Contents](#table-of-contents)
+---
 
 ### divided difference  Method
 
@@ -2358,7 +2360,8 @@ int main() {
 7.500000
 ```
 
-
+#### [Back to Contents](#table-of-contents)
+---
 ### solution-of-curve-fitting-model
 
 ### least square regression method for linear equations
@@ -2492,7 +2495,8 @@ Linear Regression Line: y = 1.00 x + 2.00
 
 
 
-
+#### [Back to Contents](#table-of-contents)
+---
 
 
 ### least square regression method for transcendental equations
@@ -2648,7 +2652,8 @@ Estimated T(6.0000000000) = 189.7614442461
 
 
 
-
+#### [Back to Contents](#table-of-contents)
+---
 
 ### least square regression method for Polynomial equations
 #### least square regression method for Polynomial equations theory
@@ -2809,7 +2814,8 @@ a2 = 1.000000
 
 ```
 
-
+#### [Back to Contents](#table-of-contents)
+---
 ### Solution of Differential Equations
 
 ### Equal Interval Interpolation Method
