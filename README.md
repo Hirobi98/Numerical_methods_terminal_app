@@ -5,10 +5,10 @@
 - [Solution of Linear Equations](#solution-of-linear-equations)
   - [Gauss Elimination Method](#gauss-elimination-method)
     - [Theory](#gauss-elimination-theory)
-      - [Intro](#introduction)
-      - [Formula](#formula)
-      - [Algorithm](#algorithm-steps)
-      - [Application](#application)
+      - [Intro](#gauss-elimination-introduction)
+      - [Formula](#gauss-elimination-formula)
+      - [Algorithm](#gauss-elimination-algorithm-steps)
+      - [Application](#gauss-elimination-application)
     - [Code](#gauss-elimination-code)
     - [Input](#gauss-elimination-input)
     - [Output](#gauss-elimination-output)
@@ -204,7 +204,7 @@ Large systems where direct inversion is inefficient
 
 
 #### Gauss Elimination Code
-```python
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -297,7 +297,7 @@ int main() {
 ```
 [Add your output format here]
 ```
-
+#### [Back to Contents](#table-of-contents)
 ---
 
 ### Gauss Jordan Elimination Method
@@ -350,8 +350,8 @@ Obtain the solution: Once the augmented matrix is in the form [I∣x], the solut
 •	Solving systems of linear equations
 •	Finding matrix inverse using row operations
 
-#### Gauss Elimination Code
-```python
+#### Gauss Jordan Code
+```cpp
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -483,22 +483,7 @@ int main() {
     return 0;
 }
 
-```
 
-#### Gauss Elimination Input
-```
-[Add your input format here]
-```
-
-#### Gauss Elimination Output
-```
-[Add your output format here]
-```
-
-
-#### Gauss Jordan Code
-```python
-# Add your code here
 ```
 
 #### Gauss Jordan Input
@@ -510,7 +495,7 @@ int main() {
 ```
 [Add your output format here]
 ```
-
+#### [Back to Contents](#table-of-contents)
 ---
 
 ### LU Decomposition Method
@@ -590,7 +575,7 @@ LU Decomposition is suitable for:
 
 
 #### LU Decomposition Code
-```python
+```cpp
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -762,7 +747,7 @@ int main() {
 ```
 [Add your output format here]
 ```
-
+#### [Back to Contents](#table-of-contents)
 ---
 
 ### Matrix Inversion
@@ -799,7 +784,7 @@ Where:
 - **Computer Science**: Applied in graphics transformations, optimization problems, and machine learning algorithms.  
 
 #### Matrix Inversion Code
-```python
+```cpp
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -1007,7 +992,7 @@ int main() {
 ```
 [Add your output format here]
 ```
-
+#### [Back to Contents](#table-of-contents)
 ---
 
 ### Solution of Non-Linear Equations
@@ -1063,7 +1048,7 @@ The Bisection Method is used for:
 	Obtaining a rough or initial approximation of a root
 	Situations where guaranteed convergence is more important than speed
 	Educational purposes to understand the basic concept of numerical root-finding
-#### Suitable For
+#### Suitable For:
 The Bisection Method is suitable for:
 	Functions that are continuous in the interval [aⓜ,b]
 	Problems where two initial guesses can be chosen such that
@@ -1074,7 +1059,7 @@ f(a)⋅f(b)<0
 	Situations where derivatives are not available or difficult to compute
 
 #### Bisection Code
-```python
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -1221,7 +1206,7 @@ int main()
 ```
 [Add your output format here]
 ```
-
+#### [Back to Contents](#table-of-contents)
 ---
 
 ### False Position Method
@@ -1245,7 +1230,7 @@ This gives the x-intercept of the straight line connecting the points `(a, f(a))
 
 ---
 
-#### False Position Steps
+#### False Position Algorithm Steps
 
 1. Choose two initial guesses `a` and `b` such that `f(a) · f(b) < 0`.
 2. Compute the next approximation `x` using:
@@ -1269,7 +1254,7 @@ This gives the x-intercept of the straight line connecting the points `(a, f(a))
 ⚠️ Note: While more accurate than Bisection in many cases, False Position may converge slowly if one side of the bracket remains fixed for many iterations.
 
 #### False Position Code
-```python
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -1337,7 +1322,7 @@ int main() {
 ```
 [Add your output format here]
 ```
-
+#### [Back to Contents](#table-of-contents)
 ---
 
 ### Secant Method
@@ -1382,7 +1367,7 @@ Where:
 - ⚠️ Note: Convergence is not guaranteed for all functions, but when it converges, it is often faster than bracketing methods.
 
 #### Secant Code
-```python
+```cpp
 #include <iostream>
 #include <vector>
 #include <cmath>
@@ -1489,7 +1474,7 @@ int main() {
 ```
 [Add your output format here]
 ```
-
+#### [Back to Contents](#table-of-contents)
 ---
 
 ### Newton Raphson Method
@@ -1539,17 +1524,7 @@ Where:
 - ⚠️ May fail or diverge if the initial guess is poor or if the derivative is zero or undefined near the root.
 
 #### Newton Raphson Code
-```python
-# Add your code here
-```
-
-#### Newton Raphson Input
-```
-[Add your input format here]
-```
-
-#### Newton Raphson Output
-```
+```cpp
 #include <iostream>
 #include <fstream>
 #include <cmath>
@@ -1688,6 +1663,15 @@ int main(){
 
 ```
 
+#### Newton Raphson Input
+```
+[Add your input format here]
+```
+
+#### Newton Raphson Output
+```
+```
+#### [Back to Contents](#table-of-contents)
 ---
 
 ### Solution of Interpolation
