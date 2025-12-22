@@ -2924,21 +2924,113 @@ a2 = 1.000000
 ### Simpson's One-Third Rule
 
 #### Simpson's One-Third Rule Theory
-[Add your theory content here]
+#### Introduction
+Simpson’s 1/3 Rule is a numerical method used to approximate the definite integral of a function. It works by replacing the actual curve with a series of parabolas (quadratic polynomials) across pairs of intervals, providing much higher accuracy than linear methods like the Trapezoidal rule.
+#### Formula
+For an interval [a, b] divided into n equal subintervals (n must be even):
+
+∫[a to b] f(x) dx ≈ (h/3) [ y0 + 4(y1 + y3 + ... + y(n−1))
+                           + 2(y2 + y4 + ... + y(n−2)) + yn ]
+
+where,
+h  = (b − a) / n
+yi = f(xi)
+#### Algorithm Steps
+
+Step 1: Divide the interval [a, b] into an even number of equal subintervals $n$.
+Step 2:Calculate the step size $h$ and determine the function values y_i at each point.
+Step 3: Apply the weighted formula: the first and last points have a weight of 1, odd-indexed points have a weight of 4, and even-indexed points have a weight of 2.
+#### Application
+1.Approximating definite integrals of smooth functions.
+2.Scenarios where an analytical integration is difficult or impossible.
+
 
 #### Simpson's One-Third Rule Code
 ```python
-# Add your code here
+#include<bits/stdc++.h>
+#include <fstream>
+#include <cmath>
+#include <functional>
+
+auto f = [](double x) {
+
+    return x * x * x;
+
+};
+
+double simpsons13(double a, double b, int n, function<double(double)> func) {
+    if (n % 2 != 0) {
+
+        return NAN;
+    }
+    double h = (b - a) / n;
+    double sum = func(a) + func(b);
+
+    for (int i = 1; i < n; i++) {
+        double x = a + i * h;
+        if (i % 2 == 0) {
+            sum += 2 * func(x);
+        } else {
+            sum += 4 * func(x);
+        }
+    }
+
+    return (h / 3) * sum;
+}
+
+using namespace std;
+
+int main() {
+
+    ifstream fin("input.txt");
+
+    ofstream fout("output.txt");
+    double a = 0.0, b = 0.0;
+    int n = 0;
+
+    if (!fin.is_open()) {
+        cerr << "Error: Could not open input.txt" << endl;
+        return 1;
+    }
+    if (!fout.is_open()) {
+        cerr << "Error: Could not open output.txt" << endl;
+        return 1;
+    }
+
+    if (!(fin >> a >> b >> n)) {
+        fout << "ERROR: Failed to read input data." << endl;
+        fin.close();
+        fout.close();
+        return 1;
+    }
+
+
+    double result = simpsons13(a, b, n, f);
+
+
+    if (isnan(result)) {
+
+        fout << "ERROR: Number of sub-intervals (n) must be even for Simpson's 1/3 Rule." << std::endl;
+    } else {
+
+        fout << result << endl;
+    }
+
+    fin.close();
+    fout.close();
+
+    return 0;
+}
 ```
 
 #### Simpson's One-Third Rule Input
 ```
-[Add your input format here]
+0.0 1.0 6
 ```
 
 #### Simpson's One-Third Rule Output
 ```
-[Add your output format here]
+0.25
 ```
 
 ---
@@ -2946,21 +3038,107 @@ a2 = 1.000000
 ### Simpson's Three-Eighths Rule 
 
 #### Simpson's Three-Eighths Rule Theory
-[Add your theory content here]
+#### Introduction
+Simpson’s 3/8 Rule is a numerical integration technique that fits a cubic polynomial through four points at a time. It is specifically used when the total number of intervals is a multiple of three.
+#### Formula
+$$
+\int_{a}^{b} f(x)\,dx \approx \frac{3h}{8}\Bigg[
+y_0 + y_n + \sum_{k=0}^{\frac{n}{3}-1} \Big( 3\,(y_{3k+1}+y_{3k+2}) + 2\,y_{3k+3} \Big)
+\Bigg]
+$$
+#### Algorithm Steps
+Step-1:Divide the interval into n subintervals such that n is divisible by 3.
+Step-2:Tabulate the x and y values.
+Step-3:Sum the values using the 1-3-3-2 pattern (ends are 1, multiples of three are 2, all others are 3).
+#### Application
+1.Integrating functions where the interval division better suits a cubic fit.
+2.Improving accuracy over the 1/3 rule for specific data distributions
 
 #### Simpson's Three-Eighths Rule Code
 ```python
-# Add your code here
+#include<bits/stdc++.h>
+#include <functional>
+#include<fstream>
+
+using namespace std;
+auto f=[](double x){
+
+return x*x*x;
+
+};
+
+
+double simpsons38(double a, double b, int n) {
+    if (n % 3 != 0) {
+        cerr << "Error: n must be a multiple of 3.\n";
+        return NAN;
+    }
+
+    double h = (b - a) / n;
+    double sum = f(a) + f(b);
+
+
+    for (int i = 1; i < n; i++) {
+        double x = a + i * h;
+        if (i % 3 == 0) {
+            sum += 2 * f(x);
+        } else {
+            sum += 3 * f(x);
+        }
+    }
+
+    return (3 * h / 8) * sum;
+}
+
+int main() {
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
+    double a,b;
+    int n;
+    if(!fin.is_open()){
+        cerr<<"Error !could not open the input.txt"<<endl;
+        return 1;
+
+    }
+
+    if(!fout.is_open()){
+        cerr<<"Error!could not open the output.txt"<<endl;
+        return 1;
+
+    }
+
+    if(!(fin>>a>>b>>n)){
+        fout<<"Error: Failed to load a,b,n from input.txt"<<endl;
+
+        fin.close();
+        fout.close();
+        return 1;
+
+    }
+
+    double result = simpsons38(a, b, n);
+    if(isnan(result)){
+        fout<<"error:number of subintervals must be a multiple of 3 for simpsons 3/8th"<<endl;
+    }
+    else{
+        fout<<fixed<<setprecision(10)<<"The integral result is : "<<result<<endl;
+    }
+    fin.close();
+    fout.close();
+
+    return 0;
+}
 ```
 
 #### Simpson's Three-Eighths Rule Input
 ```
-[Add your input format here]
+0.0 1.0 3
 ```
 
 #### Simpson's Three-Eighths Rule Output
 ```
-[Add your output format here]
+The integral result is : 0.2500000000
 ```
 
 ---
