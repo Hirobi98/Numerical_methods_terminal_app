@@ -1,77 +1,135 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<double> a;
-int n;
+vector<double> polyCoeff;
+int degree;
 
-double f(double x) {
-    double sum = 0;
-    for (int i = 0; i <= n; i++) {
-        sum += a[i] * pow(x, n - i);
+// Function to evaluate the polynomial
+double evaluatePolynomial(double x)
+{
+    double result = 0.0;
+    for (int i = 0; i <= degree; i++)
+    {
+        result += polyCoeff[i] * pow(x, i);
     }
-    return sum;
+    return result;
 }
 
-int main() {
-    ifstream fin("input.txt");
-    ofstream fout("output.txt");
+int main()
+{
+    ifstream inputFile("input.txt");
+    ofstream outputFile("output.txt");
 
-    fin >> n;
-    a.resize(n + 1);
+    outputFile << "=== Bisection Method ===" << endl;
 
-    for (int i = 0; i <= n; i++)
-        fin >> a[i];
+    // Read polynomial degree
+    inputFile >> degree;
+    polyCoeff.resize(degree + 1);
 
-    double step, eps;
-    fin >> step >> eps;
+    // Read coefficients
+    for (int i = 0; i <= degree; i++)
+    {
+        inputFile >> polyCoeff[i];
+    }
 
-    double an = a[0];
-    double an1 = (n >= 1) ? a[1] : 0;
-    double an2 = (n >= 2) ? a[2] : 0;
+    // Print the polynomial equation
+    outputFile << "Equation is: ";
+    bool firstTerm = true;
 
-    double xmax = sqrt((an1 * an1 - 2 * an * an2) / an);
+    for (int i = degree; i >= 0; i--)
+    {
+        if (polyCoeff[i] == 0) continue;
 
-    fout << fixed << setprecision(4);
-    fout << "Search Interval: [" << -xmax << ", " << xmax << "]\n\n";
+        if (!firstTerm)
+            outputFile << (polyCoeff[i] > 0 ? " + " : " - ");
+        else
+        {
+            if (polyCoeff[i] < 0) outputFile << "-";
+            firstTerm = false;
+        }
 
-    vector<pair<double, double>> brackets;
+        if (fabs(polyCoeff[i]) != 1.0 || i == 0)
+            outputFile << fabs(polyCoeff[i]);
 
-    for (double x = -xmax; x < xmax; x += step) {
-        if (f(x) * f(x + step) <= 0) {
-            brackets.push_back({x, x + step});
+        if (i > 0) outputFile << "x";
+        if (i > 1) outputFile << "^" << i;
+    }
+
+    outputFile << " = 0" << endl;
+
+    // Read interval, step size and tolerance
+    double intervalStart, intervalEnd, stepSize, tolerance;
+    inputFile >> intervalStart >> intervalEnd;
+    inputFile >> stepSize;
+    inputFile >> tolerance;
+
+    vector<pair<double, double>> rootIntervals;
+
+    // Find intervals containing roots
+    for (double x = intervalStart; x < intervalEnd; x += stepSize)
+    {
+        double fx = evaluatePolynomial(x);
+        double fxNext = evaluatePolynomial(x + stepSize);
+
+        // Exact root check
+        if (fabs(fx) < 1e-6)
+        {
+            rootIntervals.push_back({x, x});
+        }
+        // Sign change check
+        else if (fx * fxNext < 0)
+        {
+            rootIntervals.push_back({x, x + stepSize});
         }
     }
 
-    int rootCount = 1;
+    outputFile << "Intervals containing roots: ";
+    for (auto interval : rootIntervals)
+    {
+        outputFile << "{" << interval.first << "," << interval.second << "}  ";
+    }
+    outputFile << endl;
 
-    for (auto br : brackets) {
-        double left = br.first;
-        double right = br.second;
+    // Apply Bisection Method
+    vector<double> roots;
+    outputFile << "Roots are:" << endl;
+
+    for (auto interval : rootIntervals)
+    {
+        double left = interval.first;
+        double right = interval.second;
         double mid;
-        int iter = 0;
 
-        while (true) {
+        // If exact root already found
+        if (left == right)
+        {
+            roots.push_back(left);
+            continue;
+        }
+
+        while (fabs(right - left) > tolerance)
+        {
             mid = (left + right) / 2.0;
-            iter++;
 
-            if (fabs(f(mid)) < eps)
+            if (fabs(evaluatePolynomial(mid)) < 1e-6)
                 break;
-
-            if (f(left) * f(mid) < 0)
+            else if (evaluatePolynomial(mid) * evaluatePolynomial(left) < 0)
                 right = mid;
             else
                 left = mid;
         }
 
-        fout << "Root " << rootCount++
-             << " = " << mid
-             << "   Iterations = " << iter << endl;
-
-        if (rootCount > n)
-            break;
+        roots.push_back(mid);
     }
 
-    fin.close();
-    fout.close();
+    // Print all roots
+    for (int i = 0; i < roots.size(); i++)
+    {
+        outputFile << "Root " << i + 1 << " = "
+                   << fixed << setprecision(2) << roots[i] << endl;
+    }
+
+    inputFile.close();
+    outputFile.close();
     return 0;
 }

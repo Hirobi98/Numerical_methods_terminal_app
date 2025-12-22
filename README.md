@@ -1,4 +1,4 @@
-#Table of Contents
+## Table of Contents
 
 - [Solution of Linear Equations](#solution-of-linear-equations)
   - [Gauss Elimination Method](#gauss-elimination-method)

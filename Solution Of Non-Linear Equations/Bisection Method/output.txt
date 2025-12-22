@@ -1,0 +1,8 @@
+=== Bisection Method ===
+Equation is: x^3 - 6x^2 + 11x - 6 = 0
+Intervals containing roots: {1,1}  {2,2}  {2.5,3}  {3,3}  
+Roots are:
+Root 1 = 1.00
+Root 2 = 2.00
+Root 3 = 3.00
+Root 4 = 3.00
