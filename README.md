@@ -2872,7 +2872,7 @@ a2 = 1.000000
 ```
 [Add your output format here]
 ```
-
+#### [Back to Contents](#table-of-contents)
 ---
 
 ### Runge Kutta Method 
@@ -2881,7 +2881,7 @@ a2 = 1.000000
 [Add your theory content here]
 
 #### Runge Kutta Code
-```python
+```cpp
 # Add your code here
 ```
 
@@ -2894,7 +2894,7 @@ a2 = 1.000000
 ```
 [Add your output format here]
 ```
-
+#### [Back to Contents](#table-of-contents)
 ---
 
 ### Numerical Differentiation Method
@@ -2916,7 +2916,7 @@ a2 = 1.000000
 ```
 [Add your output format here]
 ```
-
+#### [Back to Contents](#table-of-contents)
 ---
 
 ### Solution of Numerical Integrations
@@ -2946,7 +2946,7 @@ Step 3: Apply the weighted formula: the first and last points have a weight of 1
 
 
 #### Simpson's One-Third Rule Code
-```python
+```cpp
 #include<bits/stdc++.h>
 #include <fstream>
 #include <cmath>
@@ -3032,7 +3032,7 @@ int main() {
 ```
 0.25
 ```
-
+#### [Back to Contents](#table-of-contents)
 ---
 
 ### Simpson's Three-Eighths Rule 
@@ -3055,7 +3055,7 @@ Step-3:Sum the values using the 1-3-3-2 pattern (ends are 1, multiples of three 
 2.Improving accuracy over the 1/3 rule for specific data distributions
 
 #### Simpson's Three-Eighths Rule Code
-```python
+```cpp
 #include<bits/stdc++.h>
 #include <functional>
 #include<fstream>
@@ -3140,7 +3140,7 @@ int main() {
 ```
 The integral result is : 0.2500000000
 ```
-
+#### [Back to Contents](#table-of-contents)
 ---
 
 ## Numerical Differentiation
@@ -3298,7 +3298,7 @@ Exact f''(x)     = 2.222733
 Error in f'(x)   = 0.102732%
 Error in f''(x)  = 0.237601%
 ```
-
+#### [Back to Contents](#table-of-contents)
 ---
 
 ### Numerical Differentiation By Backward Interpolation Method
@@ -3466,6 +3466,6 @@ Exact f''(x)     = 1.087236
 Error in f'(x)   = 0.032598%
 Error in f''(x)  = 1.580300%
 ```
-
+#### [Back to Contents](#table-of-contents)
 ---
 
