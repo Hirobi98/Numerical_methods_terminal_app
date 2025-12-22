@@ -145,6 +145,26 @@
     - [Code](#simpsons-three-eighths-rule-code)
     - [Input](#simpsons-three-eighths-rule-input)
     - [Output](#simpsons-three-eighths-rule-output)
+
+- [Numerical Differentiation](#numerical-differentiation)
+  - [Numerical Differentiation by Forward Interpolation Method](#numerical-differentiation-by-forward-interpolation-method)
+    - [Theory](#numerical-differentiation-by-forward-interpolation-theory)
+      - [Intro](#numerical-differentiation-by-forward-interpolation-introduction)
+      - [Formula](#numerical-differentiation-by-forward-interpolation-formula)
+      - [Algorithm](#numerical-differentiation-by-forward-interpolation-algorithm-steps)
+      - [Application](#numerical-differentiation-by-forward-interpolation-application)
+    - [Code](#numerical-differentiation-by-forward-interpolation-code)
+    - [Input](#numerical-differentiation-by-forward-interpolation-input)
+    - [Output](#numerical-differentiation-by-forward-interpolation-output)
+  - [Numerical Differentiation by Backward Interpolation Method](#numerical-differentiation-by-backward-interpolation-method)
+    - [Theory](#numerical-differentiation-by-backward-interpolation-theory)
+      - [Intro](#numerical-differentiation-by-backward-interpolation-introduction)
+      - [Formula](#numerical-differentiation-by-backward-interpolation-formula)
+      - [Algorithm](#numerical-differentiation-by-backward-interpolation-algorithm-steps)
+      - [Application](#numerical-differentiation-by-backward-interpolation-application)
+    - [Code](#numerical-differentiation-by-backward-interpolation-code)
+    - [Input](#numerical-differentiation-by-backward-interpolation-input)
+    - [Output](#numerical-differentiation-by-backward-interpolation-output)    
   
 
 
@@ -1940,6 +1960,74 @@ int main(){
 ```
 
 #### Simpson's Three-Eighths Rule Output
+```
+[Add your output format here]
+```
+
+---
+## Numerical Differentiation
+### Numerical Differentiation By Forward Interpolation Method
+
+#### Numerical Differentiation By Forward Interpolation Theory
+
+#### Numerical Differentiation By Forward Interpolation Introduction
+```
+[Add your input format here]
+```
+#### Numerical Differentiation By Forward Interpolation Algorithm steps
+```
+[Add your input format here]
+```
+#### Numerical Differentiation By Forward Interpolation Applications
+```
+[Add your input format here]
+```
+
+#### Numerical Differentiation By Forward Interpolation Code
+```cpp
+# Add your code here
+```
+
+#### Numerical Differentiation By Forward Interpolation Input
+```
+[Add your input format here]
+```
+
+#### Numerical Differentiation By Forward Interpolation Output
+```
+[Add your output format here]
+```
+
+---
+
+### Numerical Differentiation By Backward Interpolation Method
+
+#### Numerical Differentiation By Backward Interpolation Theory
+
+#### Numerical Differentiation By Forward Interpolation Introduction
+```
+[Add your input format here]
+```
+#### Numerical Differentiation By Forward Interpolation Algorithm steps
+```
+[Add your input format here]
+```
+#### Numerical Differentiation By Forward Interpolation Applications
+```
+[Add your input format here]
+```
+
+#### Numerical Differentiation By Backward Interpolation Code
+```cpp
+# Add your code here
+```
+
+#### Numerical Differentiation By Backward Interpolation Input
+```
+[Add your input format here]
+```
+
+#### Numerical Differentiation By Backward Interpolation Output
 ```
 [Add your output format here]
 ```
