@@ -2076,6 +2076,8 @@ int main() {
     return 0;
 }
 ```
+- [Newton's Forward Interpolation](https://github.com/Hirobi98/Numerical_methods_terminal_app/blob/main/Interpolation/Newton%27s%20Forward%20Interpolation/code.cpp)
+
 #### Newton's Forward Interpolation Input
 ```
 5
@@ -2204,7 +2206,7 @@ int main() {
     return 0;
 }
 ```
-
+- [Newton's Backward Interpolation](https://github.com/Hirobi98/Numerical_methods_terminal_app/blob/main/Interpolation/Newton%27s%20Backward%20Interpolation/code.cpp)
 #### Newton's Backward Interpolation Input
 ```
 5
@@ -2324,6 +2326,7 @@ int main() {
     return 0;
 }
 ```
+- [Newton's Divided Difference Interpolation](https://github.com/Hirobi98/Numerical_methods_terminal_app/blob/main/Interpolation/Newton%27s%20Divided_difference/code.cpp)
 
 
 #### divided difference Input
@@ -2460,7 +2463,7 @@ int main() {
     return 0;
 }
 ```
-
+- [Linear Regression](https://github.com/Hirobi98/Numerical_methods_terminal_app/blob/main/Curve%20Fitting/Linear%20Regression/linear.cpp)
 ####  least square regression method for linear equations Input
 ```
 6
@@ -2600,6 +2603,7 @@ int main() {
     return 0;
 }
 ```
+- [Transcendental Equation](https://github.com/Hirobi98/Numerical_methods_terminal_app/blob/main/Curve%20Fitting/Transcendental%20Equation/exponential.cpp)
 ####  least square regression method for transcendental equations Input
 ```
 5
