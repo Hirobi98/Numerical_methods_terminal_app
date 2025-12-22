@@ -2907,6 +2907,7 @@ int main() {
     return 0;
 }
 ```
+- [Runge–Kutta (RK) Method](https://github.com/Hirobi98/Numerical_methods_terminal_app/blob/main/Ordinary%20Differential%20Equations/Rk%20Method/rk.cpp)
 
 #### Runge Kutta Input
 ```
@@ -3024,6 +3025,7 @@ int main() {
     return 0;
 }
 ```
+- [Simpson’s 1/3 Rule](https://github.com/Hirobi98/Numerical_methods_terminal_app/blob/main/Numerical%20Integration/Simpson_1_3rd/code.cpp)
 
 #### Simpson's One-Third Rule Input
 ```
@@ -3132,6 +3134,8 @@ int main() {
     return 0;
 }
 ```
+- [Simpson’s 3/8 Rule](https://github.com/Hirobi98/Numerical_methods_terminal_app/blob/main/Numerical%20Integration/simpson_3_8th/code.cpp)
+
 
 #### Simpson's Three-Eighths Rule Input
 ```
@@ -3281,6 +3285,7 @@ int main()
     return 0;
 }
 ```
+- [Newton's Forward Numerical Differentiation](https://github.com/Hirobi98/Numerical_methods_terminal_app/blob/main/Numerical%20Differentiation/Newton%27s%20Forward/code.cpp)
 
 #### Numerical Differentiation By Forward Interpolation Input
 ```
@@ -3447,6 +3452,7 @@ int main()
     return 0;
 }
 ```
+- [Newton's Backward Numerical Differentiation](https://github.com/Hirobi98/Numerical_methods_terminal_app/blob/main/Numerical%20Differentiation/Newton%27s%20backward/code.cpp)
 
 #### Numerical Differentiation By Backward Interpolation Input
 ```
