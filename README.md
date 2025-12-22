@@ -2825,20 +2825,60 @@ a2 = 1.000000
 
 #### Runge Kutta Theory
 [Add your theory content here]
+##### Runge Kutta introduction
+##### Runge Kutta formula
+##### Runge Kutta steps
+##### Runge Kutta application
 
 #### Runge Kutta Code
 ```cpp
-# Add your code here
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+using namespace std;
+
+double f(double x, double y) {
+    return x * x + y;
+}
+
+int main() {
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
+    double x0, y0, x, h;
+    fin >> x0 >> y0 >> x >> h;
+
+    int n = (x - x0) / h;
+    double y = y0;
+    double k1, k2, k3, k4;
+
+    for (int i = 0; i < n; i++) {
+        k1 = h * f(x0, y);
+        k2 = h * f(x0 + h/2, y + k1/2);
+        k3 = h * f(x0 + h/2, y + k2/2);
+        k4 = h * f(x0 + h, y + k3);
+
+        y = y + (k1 + 2*k2 + 2*k3 + k4) / 6;
+        x0 = x0 + h;
+    }
+
+    fout << fixed << setprecision(6);
+    fout << "Value of y at x = " << x << " is " << y << endl;
+
+    fin.close();
+    fout.close();
+    return 0;
+}
 ```
 
 #### Runge Kutta Input
 ```
-[Add your input format here]
+0 1 0.4 0.1
 ```
 
 #### Runge Kutta Output
 ```
-[Add your output format here]
+Value of y at x = 0.400000 is 1.515474
 ```
 #### [Back to Contents](#table-of-contents)
 ---
