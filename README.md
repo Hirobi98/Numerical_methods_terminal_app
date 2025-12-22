@@ -2325,6 +2325,7 @@ Solve these equations simultaneously to determine the coefficients a0, a1, ..., 
 ---
 
 ##### least square regression method for Polynomial equations – steps
+```
 1. Collect the data points (x, y).  
 2. Decide the degree n of the polynomial.  
 3. Compute the required sums: Σx, Σx^2, ..., Σx^(2n), Σy, Σ(x*y), Σ(x^2*y), ..., Σ(x^n*y).  
@@ -2342,6 +2343,7 @@ Solve these equations simultaneously to determine the coefficients a0, a1, ..., 
 y = a0 + a1*x + a2*x^2 + ... + an*x^n  
 
 7. Use the polynomial to predict y for any given x.
+ ```
 ##### least-square-regression-method-for-polynomial-equations-application
 ```
 Uses:
@@ -2350,7 +2352,7 @@ Uses:
 - Approximating complex functions
 - Data smoothing and interpolation
 - Reducing error where linear regression fails
-- ```
+```
  #### least square regression method for Polynomial equations Code
 ```python
 #include <bits/stdc++.h>
