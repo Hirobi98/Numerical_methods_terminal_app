@@ -2584,7 +2584,7 @@ int main() {
 ```
 
 ---
-<<<<<<< HEAD
+
 ## Numerical Differentiation
 ### Numerical Differentiation By Forward Interpolation Method
 
@@ -2624,15 +2624,15 @@ int main() {
 
 #### Numerical Differentiation By Backward Interpolation Theory
 
-#### Numerical Differentiation By Forward Interpolation Introduction
+#### Numerical Differentiation By Backward Interpolation Introduction
 ```
 [Add your input format here]
 ```
-#### Numerical Differentiation By Forward Interpolation Algorithm steps
+#### Numerical Differentiation By Backward Interpolation Algorithm steps
 ```
 [Add your input format here]
 ```
-#### Numerical Differentiation By Forward Interpolation Applications
+#### Numerical Differentiation By Backward Interpolation Applications
 ```
 [Add your input format here]
 ```
@@ -2653,5 +2653,4 @@ int main() {
 ```
 
 ---
-=======
->>>>>>> 1d76707a383705d4e4da82e5daba1cbb09786b6c
+
