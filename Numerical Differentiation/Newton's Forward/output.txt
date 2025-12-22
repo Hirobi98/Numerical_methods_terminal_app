@@ -1,0 +1,8 @@
+
+TEST CASE #1
+Numerical f'(x)  = 2.319084
+Exact f'(x)      = 2.321469
+Numerical f''(x) = 2.217452
+Exact f''(x)     = 2.222733
+Error in f'(x)   = 0.102732%
+Error in f''(x)  = 0.237601%
