@@ -153,27 +153,17 @@ Numerical Methods Terminal App is a C++ project that demonstrates core numerical
 
 
 - [Solution of Differential Equations](#solution-of-differential-equations)
-  - [Equal Interval Interpolation Method](#equal-interval-interpolation-method)
-    - [Theory](#equal-interval-interpolation-theory)
-    - [Code](#equal-interval-interpolation-code)
-    - [Input](#equal-interval-interpolation-input)
-    - [Output](#equal-interval-interpolation-output)
-  - [Second Order Derivative Method](#second-order-derivative-method)
-    - [Theory](#second-order-derivative-theory)
-    - [Code](#second-order-derivative-code)
-    - [Input](#second-order-derivative-input)
-    - [Output](#second-order-derivative-output)
+ 
   - [Runge Kutta Method](#runge-kutta-method)
     - [Theory](#runge-kutta-theory)
+      - [Introduction](#runge-kutta-introduction)
+      - [Formula](#runge-kutta-formula)
+      - [Algorithm Steps](#runge-kutta-steps)
+      - [Application](#runge-kutta-application)
     - [Code](#runge-kutta-code)
     - [Input](#runge-kutta-input)
     - [Output](#runge-kutta-output)
-  - [Numerical Differentiation Method](#numerical-differentiation-method)
-    - [Theory](#numerical-differentiation-theory)
-    - [Code](#numerical-differentiation-code)
-    - [Input](#numerical-differentiation-input)
-    - [Output](#numerical-differentiation-output)
-
+ 
 - [Solution of Numerical Integrations](#solution-of-numerical-integrations)
   - [Simpson's One-Third Rule](#simpsons-one-third-rule)
     - [Theory](#simpsons-one-third-rule-theory)
@@ -2831,50 +2821,6 @@ a2 = 1.000000
 ---
 ### Solution of Differential Equations
 
-### Equal Interval Interpolation Method
-
-#### Equal Interval Interpolation Theory
-[Add your theory content here]
-
-#### Equal Interval Interpolation Code
-```python
-# Add your code here
-```
-
-#### Equal Interval Interpolation Input
-```
-[Add your input format here]
-```
-
-#### Equal Interval Interpolation Output
-```
-[Add your output format here]
-```
-
----
-
-### Second Order Derivative Method 
-
-#### Second Order Derivative Theory
-[Add your theory content here]
-
-#### Second Order Derivative Code
-```python
-# Add your code here
-```
-
-#### Second Order Derivative Input
-```
-[Add your input format here]
-```
-
-#### Second Order Derivative Output
-```
-[Add your output format here]
-```
-#### [Back to Contents](#table-of-contents)
----
-
 ### Runge Kutta Method 
 
 #### Runge Kutta Theory
@@ -2897,27 +2843,6 @@ a2 = 1.000000
 #### [Back to Contents](#table-of-contents)
 ---
 
-### Numerical Differentiation Method
-
-#### Numerical Differentiation Theory
-[Add your theory content here]
-
-#### Numerical Differentiation Code
-```python
-# Add your code here
-```
-
-#### Numerical Differentiation Input
-```
-[Add your input format here]
-```
-
-#### Numerical Differentiation Output
-```
-[Add your output format here]
-```
-#### [Back to Contents](#table-of-contents)
----
 
 ### Solution of Numerical Integrations
 
