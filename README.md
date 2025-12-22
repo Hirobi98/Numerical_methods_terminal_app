@@ -337,6 +337,7 @@ int main() {
     return 0;
 }
 ```
+- [Gauss Elimination Method](https://github.com/Hirobi98/Numerical_methods_terminal_app/blob/main/Solution%20Of%20Linear%20equations/Gauss%20Elimination/gauss.cpp)
 
 #### Gauss Elimination Input
 ```
@@ -564,6 +565,7 @@ int main() {
 
 
 ```
+- [Gauss–Jordan Elimination Method](https://github.com/Hirobi98/Numerical_methods_terminal_app/blob/main/Solution%20Of%20Linear%20equations/Gauss_jordan_elimination/code.cpp)
 
 #### Gauss Jordan Input
 ```
@@ -859,6 +861,7 @@ int main() {
     return 0;
 }
 ```
+- [LU Decomposition Method](https://github.com/Hirobi98/Numerical_methods_terminal_app/blob/main/Solution%20Of%20Linear%20equations/LU-Decomposition/code.cpp)
 
 #### LU Decomposition Input
 ```
@@ -1148,6 +1151,7 @@ int main() {
 }
 
 ```
+- [Matrix Inversion Method](https://github.com/Hirobi98/Numerical_methods_terminal_app/blob/main/Solution%20Of%20Linear%20equations/Matrix_Inversion/code.cpp)
 
 #### Matrix Inversion Input
 ```
@@ -1393,6 +1397,7 @@ int main()
     return 0;
 }
 ```
+- [Bisection Method](https://github.com/Hirobi98/Numerical_methods_terminal_app/blob/main/Solution%20Of%20Non-Linear%20Equations/Bisection%20Method/bisection.cpp)
 
 #### Bisection Input
 ```
@@ -1533,6 +1538,7 @@ int main() {
 }
 
 ```
+- [False Position Method](https://github.com/Hirobi98/Numerical_methods_terminal_app/blob/main/Solution%20Of%20Non-Linear%20Equations/False%20Position%20Method/code.cpp)
 
 #### False Position Input
 ```
@@ -1708,6 +1714,7 @@ int main() {
     return 0;
 }
 ```
+- [Secant Method](https://github.com/Hirobi98/Numerical_methods_terminal_app/blob/main/Solution%20Of%20Non-Linear%20Equations/Secant%20Method/code.cpp)
 
 #### Secant Input
 ```
@@ -1936,6 +1943,7 @@ int main(){
 }
 
 ```
+- [Newton Raphson Method](https://github.com/Hirobi98/Numerical_methods_terminal_app/blob/main/Solution%20Of%20Non-Linear%20Equations/Newton_raphson/code.cpp)
 
 #### Newton Raphson Input
 ```
