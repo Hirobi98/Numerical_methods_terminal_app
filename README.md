@@ -3151,18 +3151,23 @@ The integral result is : 0.2500000000
 #### Numerical Differentiation By Forward Interpolation Introduction
 ```
 Newton’s Forward Differentiation is used to find the derivative of a function at a specific point near the beginning of a set of equally spaced data points. It is derived by differentiating the Newton’s Forward Interpolation polynomial.
+
+**Formula:**
+
+dy/dx at x = x₀ ≈ (1/h) × [ Δy₀ − (1/2)Δ²y₀ + (1/3)Δ³y₀ − (1/4)Δ⁴y₀ + ... ]
+
+
 ```
 #### Numerical Differentiation By Forward Interpolation Algorithm steps
 ```
-Step 1: Construct a forward difference table from the given $(x, y)$ data.
-Step 2: Identify the spacing $h$ between $x$ values.Select the forward differences ($\Delta y_0, \Delta^2 y_0, \dots$) from the top row of the table.
+Step 1: Construct a forward difference table from the given (x, y) data.
+Step 2: Identify the spacing h between x values.Select the forward differences from the top row of the table.
 Step 3: Substitute these values into the forward differentiation formula.
 ```
 #### Numerical Differentiation By Forward Interpolation Applications
 ```
-Estimating velocity or acceleration from recorded data points.
-
-Calculating rates of change near the start of a dataset.
+Step1: Estimating velocity or acceleration from recorded data points.
+Step2:Calculating rates of change near the start of a dataset.
 ```
 
 #### Numerical Differentiation By Forward Interpolation Code
@@ -3302,30 +3307,164 @@ Error in f''(x)  = 0.237601%
 
 #### Numerical Differentiation By Backward Interpolation Introduction
 ```
-[Add your input format here]
+Newton’s Backward Differentiation is used to calculate the derivative of a function at a point located near the end of a dataset. It utilizes backward differences to ensure the estimate stays within the bounds of the existing data.
+
+**Formula:**
+
+dy/dx at x = xₙ ≈ (1/h) × [ Δyₙ₋₁ + (1/2)Δ²yₙ₋₂ + (1/3)Δ³yₙ₋₃ + (1/4)Δ⁴yₙ₋₄ + ... ]
+
+
 ```
 #### Numerical Differentiation By Backward Interpolation Algorithm steps
 ```
-[Add your input format here]
+1.Initialize Data: Input the set of equally spaced x values and their corresponding y values.
+2.Calculate Spacing: Determine the constant difference h = x_i - x_{i-1}.
+3.Construct Difference Table: Create a backward difference table where each column represents higher-order differences.
+4.Identify Terms: Select the values from the bottom row of the difference table corresponding to x_n.
+5.Apply Formula: Substitute h and the identified values into the first or second derivative formula.
+6.Compute Result: Perform the arithmetic to obtain the numerical value of the derivative.
 ```
 #### Numerical Differentiation By Backward Interpolation Applications
 ```
-[Add your input format here]
+1.Estimating final velocity or acceleration in time-series measurements.
+2.Analyzing trends at the conclusion of an experimental observation period.
 ```
 
 #### Numerical Differentiation By Backward Interpolation Code
 ```cpp
-# Add your code here
+#include<bits/stdc++.h>
+using namespace std;
+
+long long fact(int n)
+{
+    if(n == 0 || n == 1) return 1;
+    return n * fact(n - 1);
+}
+
+double f(double x)
+{
+    return x*x + sin(x);
+}
+
+double f1(double x)
+{
+    return 2*x + cos(x);
+}
+
+double f2(double x)
+{
+    return 2 - sin(x);
+}
+
+vector<vector<double>> backwardDiffTable(vector<double>& values)
+{
+    int n = values.size();
+    vector<vector<double>> table(n, vector<double>(n, 0.0));
+
+    for(int i = 0; i < n; i++)
+        table[i][0] = values[i];
+
+    for(int j = 1; j < n; j++)
+        for(int i = n - 1; i >= j; i--)
+            table[i][j] = table[i][j - 1] - table[i - 1][j - 1];
+
+    return table;
+}
+
+void solve(int tc, ifstream& fin, ofstream& fout)
+{
+    int n;
+    fin >> n;
+
+    double a, b;
+    fin >> a >> b;
+
+    double X;
+    fin >> X;
+
+    double h = (b - a) / n;
+
+    vector<double> x(n), y(n);
+    for(int i = 0; i < n; i++)
+    {
+        x[i] = a + i * h;
+        y[i] = f(x[i]);
+    }
+
+    vector<vector<double>> diff = backwardDiffTable(y);
+
+    double u = (X - x[n - 1]) / h;
+
+    double dydx =
+        ( diff[n - 1][1]
+        + (2*u + 1) * diff[n - 1][2] / fact(2)
+        + (3*u*u + 6*u + 2) * diff[n - 1][3] / fact(3)
+        ) / h;
+
+    double d2ydx2 =
+        ( diff[n - 1][2]
+        + (u + 1) * diff[n - 1][3]
+        ) / (h * h);
+
+    double exact1 = f1(X);
+    double exact2 = f2(X);
+
+    double error1 = fabs((exact1 - dydx) / exact1) * 100.0;
+    double error2 = fabs((exact2 - d2ydx2) / exact2) * 100.0;
+
+
+    fout << "\nTEST CASE #" << tc << "\n";
+    fout << fixed << setprecision(6);
+    fout << "Numerical f'(x)  = " << dydx << "\n";
+    fout << "Exact f'(x)      = " << exact1 << "\n";
+    fout << "Numerical f''(x) = " << d2ydx2 << "\n";
+    fout << "Exact f''(x)     = " << exact2 << "\n";
+    fout << "Error in f'(x)   = " << error1 << "%\n";
+    fout << "Error in f''(x)  = " << error2 << "%\n";
+}
+
+int main()
+{
+
+
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
+    int t;
+    fin >> t;
+
+    fout << "Total Test Cases: " << t << "\n";
+
+    for(int i = 1; i <= t; i++)
+        solve(i, fin, fout);
+
+    fin.close();
+    fout.close();
+
+
+    return 0;
+}
 ```
 
 #### Numerical Differentiation By Backward Interpolation Input
 ```
-[Add your input format here]
+1
+6
+1.0 1.6
+1.15
 ```
 
 #### Numerical Differentiation By Backward Interpolation Output
 ```
-[Add your output format here]
+Total Test Cases: 1
+
+TEST CASE #1
+Numerical f'(x)  = 2.709370
+Exact f'(x)      = 2.708487
+Numerical f''(x) = 1.070054
+Exact f''(x)     = 1.087236
+Error in f'(x)   = 0.032598%
+Error in f''(x)  = 1.580300%
 ```
 
 ---
