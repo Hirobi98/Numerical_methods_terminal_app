@@ -2078,11 +2078,27 @@ int main() {
 ```
 #### Newton's Forward Interpolation Input
 ```
-[Add your output format here]
+5
+0 1 2 3 4
+1 2 4 8 16
+2.5
+```
+```
+5
+→ Number of data points (n)
+
+0 1 2 3 4
+→ Values of the independent variable x (equally spaced)
+
+1 2 4 8 16
+→ Corresponding values of the dependent variable y
+
+2.5
+→ Value of x at which interpolation is required
 ```
 #### Newton's Forward Interpolation Output
 ```
-[Add your output format here]
+5.648438
 ```
 
 
@@ -2191,13 +2207,30 @@ int main() {
 
 #### Newton's Backward Interpolation Input
 ```
-[Add your output format here]
+5
+0 1 2 3 4
+1 2 4 8 16
+3.5
+```
+```
+5
+→ Number of data points (n)
+
+0 1 2 3 4
+→ Values of the independent variable x (equally spaced)
+
+1 2 4 8 16
+→ Corresponding values of the dependent variable y
+
+3.5
+→ Value of x at which interpolation is required (near the end of the table)
+
 ```
 #### Newton's Backward Interpolation Output
 ```
-[Add your output format here]
-```
+11.313708
 
+```
 
 
 
@@ -2292,15 +2325,35 @@ int main() {
 }
 ```
 
+
 #### divided difference Input
 ```
-[Add your output format here]
+5
+1 2 3 4 5
+3 4 5 6 7
+5.5
 ```
-#### divided difference Output
 ```
-[Add your output format here]
+5
+→ Number of data points (n)
+
+0 1 2 3 4
+→ Values of the independent variable x 
+
+3 4 5 6 7
+→ Corresponding values of the dependent variable y
+
+5.5
+→ Value of x at which interpolation is required 
+
 ```
 
+
+
+#### divided difference Output
+```
+7.500000
+```
 
 
 ### solution-of-curve-fitting-model
@@ -2410,12 +2463,28 @@ int main() {
 
 ####  least square regression method for linear equations Input
 ```
-[Add your output format here]
+6
+1 2 3 4 5 6
+3 4 5 6 7 8
+
+```
+```
+6
+→ Number of data points (n)
+
+1 2 3 4 5 6
+→ Values of the independent variable x
+
+3 4 5 6 7 8
+→ Corresponding values of the dependent variable y
+
 ```
 ####  least square regression method for linear equations Output
 ```
-[Add your output format here]
+Linear Regression Line: y = 1.00 x + 2.00
+
 ```
+
 
 
 
@@ -2531,16 +2600,37 @@ int main() {
     return 0;
 }
 ```
-
 ####  least square regression method for transcendental equations Input
 ```
-[Add your output format here]
+5
+1 2 3 4 5
+50 80 96 120 145
+6
+
+```
+```
+5
+→ Number of observations (n)
+
+1 2 3 4 5
+→ Values of the independent variable t
+
+50 80 96 120 145
+→ Corresponding values of the dependent variable T
+
+6
+→ Value of t at which T is to be estimated
+
 ```
 ####  least square regression method for transcendental equations Output
 ```
-[Add your output format here]
-```
+Computed parameters:
+a = 5.7492444036
+b = 41.0586716201
 
+Estimated T(6.0000000000) = 189.7614442461
+
+```
 
 
 
@@ -2687,15 +2777,34 @@ int main() {
     return 0;
 }
 ```
-
+- [Polynomial Equation](https://github.com/Hirobi98/Numerical_methods_terminal_app/blob/main/Curve%20Fitting/Polynomial%20Equation/polynomial.cpp)
 #### least square regression method for Polynomial equations Input
 ```
-[Add your output format here]
+5 2
+1 2 3 4 5
+6 11 18 27 38
+
+```
+```
+5 2
+→ n = Number of data points
+→ degree = Degree of the polynomial
+
+1 2 3 4 5
+→ Values of the independent variable x
+
+6 11 18 27 38
+→ Corresponding values of the dependent variable y
+
 ```
 #### least square regression method for Polynomial equations Output
 ```
-[Add your output format here]
+a0 = 3.000000
+a1 = 2.000000
+a2 = 1.000000
+
 ```
+
 
 ### Solution of Differential Equations
 
