@@ -1,5 +1,18 @@
-### Numerical methods
+# Numerical Methods Lab Project
 
+**Course:** CSE 2208 - Numerical Methods Lab  
+**Collaborators:**
+1. 2207091 (Github: [Mirza samia Beg](https://github.com/mirzamamun547))
+2. 2207107 (Github: [Aurin Farzana](https://github.com/Aurin-662))
+3. 2207121 (Github: [Hirobi Chakma](https://github.com/Hirobi98))
+
+---
+## Overview
+
+Numerical Methods Terminal App is a C++ project that demonstrates core numerical techniques directly in the terminal. It includes root‑finding methods (Bisection, False Position, Secant, Newton–Raphson) and linear algebra (LU Decomposition). Users provide input via text files, and the program outputs step‑by‑step solutions and approximations, making it a practical learning tool for students and a reference for developers.
+
+
+---
 ## Table of Contents
 
 - [Solution of Linear Equations](#solution-of-linear-equations)
