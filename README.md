@@ -13,6 +13,41 @@ Numerical Methods Terminal App is a C++ project that demonstrates core numerical
 
 
 ---
+```
+Numerical_methods_terminal_app/
+├── .gitignore
+├── README.md
+└── src/
+    ├── main.cpp
+    ├── linear_equations/
+    │   ├── gauss_elimination.cpp
+    │   ├── gauss_jordan.cpp
+    │   ├── lu_decomposition.cpp
+    │   └── matrix_inversion.cpp
+    ├── non_linear_equations/
+    │   ├── bisection.cpp
+    │   ├── false_position.cpp
+    │   ├── secant.cpp
+    │   └── newton_raphson.cpp
+    ├── interpolation/
+    │   ├── newton_forward.cpp
+    │   ├── newton_backward.cpp
+    │   ├── divided_difference.cpp
+    │   └── equal_interval.cpp
+    ├── curve_fitting/
+    │   ├── least_square_linear.cpp
+    │   ├── least_square_transcendental.cpp
+    │   └── least_square_polynomial.cpp
+    ├── differential_equations/
+    │   ├── runge_kutta.cpp
+    │   └── second_order.cpp
+    ├── numerical_differentiation/
+    │   ├── forward_interpolation.cpp
+    │   └── backward_interpolation.cpp
+    └── numerical_integration/
+        ├── simpson_one_third.cpp
+        └── simpson_three_eighths.cpp
+```
 ## Table of Contents
 
 - [Solution of Linear Equations](#solution-of-linear-equations)
