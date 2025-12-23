@@ -33,7 +33,6 @@ Numerical_methods_terminal_app/
     │   ├── newton_forward
     │   ├── newton_backward
     │   ├── divided_difference
-    │   └── equal_interval
     ├── curve_fitting/
     │   ├── least_square_linear
     │   ├── least_square_transcendental
