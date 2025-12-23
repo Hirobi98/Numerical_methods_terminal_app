@@ -20,33 +20,32 @@ Numerical_methods_terminal_app/
 └── src/
     ├── main.cpp
     ├── linear_equations/
-    │   ├── gauss_elimination.cpp
-    │   ├── gauss_jordan.cpp
-    │   ├── lu_decomposition.cpp
-    │   └── matrix_inversion.cpp
+    │   ├── gauss_elimination
+    │   ├── gauss_jordan
+    │   ├── lu_decomposition
+    │   └── matrix_inversion
     ├── non_linear_equations/
-    │   ├── bisection.cpp
-    │   ├── false_position.cpp
-    │   ├── secant.cpp
-    │   └── newton_raphson.cpp
+    │   ├── bisection
+    │   ├── false_position
+    │   ├── secant
+    │   └── newton_raphson
     ├── interpolation/
-    │   ├── newton_forward.cpp
-    │   ├── newton_backward.cpp
-    │   ├── divided_difference.cpp
-    │   └── equal_interval.cpp
+    │   ├── newton_forward
+    │   ├── newton_backward
+    │   ├── divided_difference
+    │   └── equal_interval
     ├── curve_fitting/
-    │   ├── least_square_linear.cpp
-    │   ├── least_square_transcendental.cpp
-    │   └── least_square_polynomial.cpp
+    │   ├── least_square_linear
+    │   ├── least_square_transcendental
+    │   └── least_square_polynomial
     ├── differential_equations/
-    │   ├── runge_kutta.cpp
-    │   └── second_order.cpp
+    │   ├── runge_kutta
     ├── numerical_differentiation/
-    │   ├── forward_interpolation.cpp
-    │   └── backward_interpolation.cpp
+    │   ├── forward_interpolation
+    │   └── backward_interpolation
     └── numerical_integration/
-        ├── simpson_one_third.cpp
-        └── simpson_three_eighths.cpp
+        ├── simpson_one_third
+        └── simpson_three_eighths
 ```
 ## Table of Contents
 
